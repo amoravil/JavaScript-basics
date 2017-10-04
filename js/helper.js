@@ -15,6 +15,11 @@ replace the %data% placeholder text you see in them.
 var HTMLheaderName = '<h1 id="name">%data%</h1>';
 var HTMLheaderRole = '<span>%data%</span><hr>';
 
+// bio
+// bio contains name, role, welcomeMessage, and biopic strings, contacts object and 
+// skills array of skill strings. The contacts object should contain a mobile number, 
+// email address, github username, twitter handle and location. The twitter property is optional.
+
 var HTMLcontactGeneric = '<li class="flex-item"><span class="orange-text">%contact%</span><span class="white-text">%data%</span></li>';
 var HTMLmobile = '<li class="flex-item"><span class="orange-text">mobile</span><span class="white-text">%data%</span></li>';
 var HTMLemail = '<li class="flex-item"><span class="orange-text">email</span><span class="white-text">%data%</span></li>';
@@ -29,6 +34,10 @@ var HTMLwelcomeMsg = '<span class="welcome-message">%data%</span>';
 var HTMLskillsStart = '<h3 id="skills-h3">Skills at a Glance:</h3><ul id="skills" class="flex-column"></ul>';
 var HTMLskills = '<li class="flex-item"><span class="white-text">%data%</span></li>';
 
+// work
+// work contains an array of jobs. Each object in the jobs array should contain an employer, 
+// title, location, dates worked and description strings.
+
 var HTMLworkStart = '<div class="work-entry"></div>';
 var HTMLworkEmployer = '<a href="#">%data%';
 var HTMLworkTitle = ' - %data%</a>';
@@ -36,11 +45,23 @@ var HTMLworkDates = '<div class="date-text">%data%</div>';
 var HTMLworkLocation = '<div class="location-text">%data%</div>';
 var HTMLworkDescription = '<p><br>%data%</p>';
 
+// projects
+// projects contains an array of projects. Each object in the projects array should contain title, 
+// dates and description strings, and an images array with URL strings for project images.
+
 var HTMLprojectStart = '<div class="project-entry"></div>';
 var HTMLprojectTitle = '<a href="#">%data%</a>';
 var HTMLprojectDates = '<div class="date-text">%data%</div>';
 var HTMLprojectDescription = '<p><br>%data%</p>';
 var HTMLprojectImage = '<img src="%data%">';
+
+
+// education
+// education contains an array of schools. Each object in the schools array contains name, 
+// location, degree dates and url strings, and amajors array of major strings. 
+
+// education also contains an onlineCourses array. Each object in the onlineCourses array 
+// should contain a title, school, dates and url strings.
 
 var HTMLschoolStart = '<div class="education-entry"></div>';
 var HTMLschoolName = '<a href="#">%data%';
@@ -144,6 +165,7 @@ function initializeMap() {
     work.jobs.forEach(function(job){
       locations.push(job.location);
     });
+    console.log(locations);
 
     return locations;
   }
@@ -239,11 +261,11 @@ Uncomment the code below when you're ready to implement a Google Map!
 */
 
 // Calls the initializeMap() function when the page loads
-//window.addEventListener('load', initializeMap);
+window.addEventListener('load', initializeMap);
 
 // Vanilla JS way to listen for resizing of the window
 // and adjust map bounds
-//window.addEventListener('resize', function(e) {
+window.addEventListener('resize', function(e) {
   //Make sure the map bounds get updated on page resize
-//  map.fitBounds(mapBounds);
-//});
+ map.fitBounds(mapBounds);
+});
