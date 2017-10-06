@@ -1,0 +1,421 @@
+
+JavaScript
+
+
+_____________________________
+console from chrome devtool 
+_____________________________
+
+* console.log("hello word");  >>>> print used for debugging.
+* document.URL >>> url de la pagina
+* $(".super-header-wrapper").html("<img style='width:100%' src='http://goo.gl/WCrBmS'>"); >>> toma una elemento (usando jquery) con esta clase y cambia su html.
+
+
+* jQuery .append() 
+* jQuery .prepend() 
+* JavaScript string.replace().
+
+* s = s[1].toUpperCase() + s.slice(2); audacity >>> Udacity
+
+_____________________________
+Truthy/Falsy
+_____________________________
+
+* truthy: true, non-zero numbers, strings, objects, arrays, functions.
+* falsy: false, 0, "", undefined, null, NaN
+* https://www.sitepoint.com/javascript-truthy-falsy/
+
+_____________________________
+Arrays
+_____________________________
+
+* https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array
+* var myArray = ["Euler", 3.14159, {name: "James", job: "Course Developer"}, myFunc]
+* newArray = _array.slice(0); >>>> no se puede sin slice pues no crea un nuevo arreglo, solo una nueva referencia.
+* array.pop()
+* array.push()
+* array.length()
+
+_____________________________
+String
+_____________________________
+
+* string.split(" ")
+* .toUpperCase() and toLowerCase()
+* join (" ")
+
+_____________________________
+objects
+_____________________________
+
+* No classes in JS!
+* Though JavaScript has no classes, you can mimic many of the characteristics with its functions. 
+
+* var myObj={
+	"name" : "James",
+	"age" : 32,
+	"skills" : array
+  }
+* myObj.city = "San Francisco" >>>> new property
+
+_____________________________
+JSON
+_____________________________
+
+* Ejemplo:
+
+var education = {
+	"schools": [
+		{
+			"name": "UIS",
+			"city": "Bucaramanga"	
+		},
+		{
+			"name": "Uniandes",
+			"city": "Bogota"
+		}
+	]
+}
+
+* validation: https://jsonlint.com/
+
+architects and designs information technology solutions and services for organizations. They posses a strong business and IT background to architect software, hardware, network or any IT solution that gives the best results to the business.
+
+Ejemplo uso character entities (&lt;) y regular expression (/</g)
+ * newHTML = newHTML.replace(/</g,"&lt;");
+
+_____________________________
+if statements
+_____________________________
+
+
+evaluators: < > <= >= === != ==
+
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Equality_comparisons_and_when_to_use_them
+
+When you use three equal signs, ===, no type conversion is done prior to the comparison. If the values are different types, for example, a String and a Number, they can't ever be equal. To return true, the values must be equal and the types must be the same.
+
+Loose equality, ==, checks to see if the two values are the same type and if not, converts to a common type before the conversion. If the types are already the same, there is no difference between the result of === and ==. When they aren't it can cause unexpected results.
+
+_____________________________
+While loops
+_____________________________
+
+* while () {},
+* for (ini;condition;mutator){}  >>>>>> (var i=0; i,9; i++)
+* for (item in object or array) {}  >>>>> item is the index
+
+being careful to wrap the content of the for-in in a conditional statement that tests if the key is part of the object:
+myObj = {'country1':'Germany', 'country2':'Argentina'};
+for (key in myObj){
+    if (myObj.hasOwnProperty(key)) {
+        console.log(myObj[key]);
+    }
+}
+
+
+mySimpleArray = ['a', 1, 'etc'];
+mySimpleArray.forEach(function(val) {
+    console.log(val);
+});
+
+const starWars = {
+    "creatures": [
+        {
+            "name": "bantha",
+            "face": "furry"
+        },
+        {
+            "name": "loth-cat",
+            "face": "toothy"
+        }
+    ]
+};
+starWars.creatures.forEach(function(creature) {
+    console.log(creature.name);
+    console.log(creature.face);
+});
+
+
+_____________________________
+Function
+_____________________________
+
+* var myFunc = function(param1, param2) {}
+* function myFunc(param1, param2){}
+* function is an object.
+* encapsulation: create a function as part of a object: projecs.display = function(){}
+
+* anonymous functions: Anonymous functions are functions that don't have a name and are often returned by other functions and objects. Some JavaScript libraries ask for a callback function to be executed once they have have the results of a task. Anonymous functions are used in these cases because there is not a need to call the function by name outside the confines of the enclosing function. anonymous function (function literal, lambda abstraction) 
+
+* Function Declaration Syntax: If you use the var functionName syntax, only the function's declaration (e.g. var functionName;) gets moved at the top of its scope. However, if you use function functionName() syntax, the function declaration and definition (the actual instructions inside the function) get moved to the top of the function's scope.
+
+
+_____________________________
+Librerias interesantes
+_____________________________
+
+* https://d3js.org/  >>>>> D3.js is a JavaScript library for manipulating documents based on data.
+* https://developers.google.com/maps/documentation/javascript/tutorial  >>>>> Maps JavaScript API
+* https://console.cloud.google.com/projectselector/home/dashboard
+
+
+
+Function Declaration Syntax: If you use the var functionName syntax, only the function's declaration (e.g. var functionName;) gets moved at the top of its scope. However, if you use function functionName() syntax, the function declaration and definition (the actual instructions inside the function) get moved to the top of the function's scope
+
+_________________________________________________________
+ejemplos desordenados.
+_________________________________________________________
+
+
+// Esta solucion funciona pero no es recomendado el uso de for... in 
+// dejo la de mas abajo porque sigue el estandar recomendado por udacity 
+// https://udacity.github.io/frontend-nanodegree-styleguide/javascript.html#for-in-loop
+
+// for (job in work.jobs) {
+//    // console.log(work.jobs[job]);
+//     $("#workExperience").append(HTMLworkStart);
+//     formatworkEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
+//     formatworkTitle = HTMLworkTitle.replace("%data%", work.jobs[job].title);
+//     $(".work-entry:last").append(formatworkEmployer + formatworkTitle);
+//     $(".work-entry:last").append(HTMLworkDates.replace("%data%", work.jobs[job].dates));
+//     $(".work-entry:last").append(HTMLworkLocation.replace("%data%", work.jobs[job].location));
+//     $(".work-entry:last").append(HTMLworkDescription.replace("%data%", work.jobs[job].description));
+// }
+
+
+function displayWork() {
+    work.jobs.forEach(function(job) {
+        $("#workExperience").append(HTMLworkStart);
+        formatworkEmployer = HTMLworkEmployer.replace("%data%", job.employer);
+        formatworkTitle = HTMLworkTitle.replace("%data%", job.title);
+        $(".work-entry:last").append(formatworkEmployer + formatworkTitle);
+        $(".work-entry:last").append(HTMLworkDates.replace("%data%", job.dates));
+        $(".work-entry:last").append(HTMLworkLocation.replace("%data%", job.location));
+        $(".work-entry:last").append(HTMLworkDescription.replace("%data%", job.description));
+    })
+};
+displayWork();
+
+//____________________
+
+// var html = '<script src="http://hackyourwebsite.com/eviljavascript.js"></script>';
+
+// var charEscape = function(_html) {
+//     var newHTML = _html;
+//     // How will you make sure that newHTML doesn't contain any < or > ?
+//     // Your code goes here!
+//     newHTML = newHTML.replace(/</g,"&lt;");
+//      newHTML = newHTML.replace(/>/g,"&gt;");
+    
+//     // Don't delete this line!
+//     return newHTML;
+// };
+
+// // Did your code work? The line below will tell you!
+// console.log(charEscape(html));
+
+//____________________
+
+// var formatContactGeneric = HTMLcontactGeneric.replace("%contact%", "Address");
+// console.log(formatContactGeneric);
+// var formatContactGeneric = formatContactGeneric.replace("%data%", bio.contactsGeneric);
+//____________________
+
+// var work = {};
+// work.employer = "Banco de la Republica";
+// work.title = "IT Architect";
+// work.dates = "2008-2015";
+// work.location = "Bogotá - Colombia";
+// work.description = "architects and designs information technology solutions and services for organizations. They posses a strong business and IT background to architect software, hardware, network or any IT solution that gives the best results to the business.";
+
+// var education = {};
+// education["name"] = "UIS";
+// education["degree"] = "Systems Engineer";
+// education["dates"] = "1995-2002";
+// education["location"] = "Bucaramanga - Colombia";
+
+//____________________
+
+ // $("#main").append(["Andrea Mora"]);
+ // var awesomeThoughts = "I am Andrea and I am AWESOME"
+ // console.log(awesomeThoughts);
+
+ // var funThoughts = awesomeThoughts.replace("AWESOME","FUN");
+ // console.log(funThoughts);
+ // $("#main").append(funThoughts);
+
+// var skills = ["programming", "teaching", "mom", "JS"];
+// $("#main").append(skills);
+// $("#main").append(skills[0]);
+
+// skills.forEach(function(item, index, array) {
+//  console.log(item,index);
+// });
+
+// var sampleArray = [0,0,7];
+
+// // var incrementLastArrayElement = function(_array) {
+// //     var newArray = [];
+// //     newArray = _array;
+// //     newArray[2] = newArray[2]+1;
+// //     return newArray;
+// // };
+
+// function incrementLastArrayElement(_array)  {
+//     var newArray = [];
+//     newArray = _array.slice(0);
+//     var lastNumber = newArray.pop();
+//     newArray.push(lastNumber + 1);
+//     return newArray;
+// }
+// // Did your code work? The line below will tell you!
+// console.log(incrementLastArrayElement(sampleArray));
+
+
+// var name = "AlbERt EINstEiN";
+
+// function nameChanger(oldName) {
+//     var finalName = oldName;
+//     // Your code goes here!
+
+//     names = oldName.split(" ");
+//     names[0] = names[0].slice(0,1).toUpperCase() 
+//              + names[0].slice(1).toLowerCase();
+//     names[1]= names[1].toUpperCase();
+//     finalName = names.join(" ");
+
+//     // Don't delete this line!
+//     return finalName;
+// };
+
+// // Did your code work? The line below will tell you!
+// console.log(nameChanger(name));
+
+
+
+// var weirdObject = {
+//     "property": "Time for an astronomy lesson!",
+//     "property1": "Cameron's minor in college was astronomy",
+//     "property-2": "The 4 Galilean largest moons of Jupiter are:",
+//     "property 3": "Io, Ganymede, Callisto, Europa",
+//     "property$": "Saturn's moon Enceladus has liquid water ocean under its icy surface",
+//     " property": "The Sun contains 99.87% of the mass of the entire solar system",
+//     "property()": "There are 5 dwarf planets in our solar system:",
+//     "property[]": "Pluto, Ceres, Eris, Haumea, Makemake",
+//     "8property": "Mars has two tiny moons: Phobos and Deimos"
+// };
+
+// // Use console.log() to figure out if dot and/or bracket notation
+// // will work to access the properties below. Mark true if you can use dot/bracket
+// // notation to access the property, otherwise mark false.
+
+// // For example, uncomment the line below to see if you can use dot notation to access `property1`.
+// // console.log(weirdObject.property1);
+
+// // I'll give you the first answer. The rest are set to false. Try out each property and
+// // if you can use dot or bracket notation to access it, change the answer to true!
+
+// // property
+// console.log(weirdObject.property);
+// console.log(weirdObject["property"]);
+// var dotNotation0 = true;
+// var bracketNotation0 = true;
+
+// // property1
+// console.log(weirdObject.property1);
+// console.log(weirdObject["property1"]);
+// var dotNotation1 = true;
+// var bracketNotation1 = true;
+
+// // property-2
+// // console.log(weirdObject.property-2);
+// console.log(weirdObject["property-2"]);
+// var dotNotation2 = false;
+// var bracketNotation2 = true;
+
+// // property 3
+// // console.log(weirdObject.property 3);
+// console.log(weirdObject["property 3"]);
+// var dotNotation3 = false;
+// var bracketNotation3 = true;
+
+// // property$
+// console.log(weirdObject.property$);
+// console.log(weirdObject["property$"]);
+// var dotNotation4 = true;
+// var bracketNotation4 = true;
+
+// // // *space*property
+// // console.log(weirdObject.*space*property);
+// // console.log(weirdObject["*space*property"]);
+// var dotNotation5 = false;
+// var bracketNotation5 = false;
+
+// // // property()
+// // console.log(weirdObject.property());
+// console.log(weirdObject["property()"]);
+// var dotNotation6 = false;
+// var bracketNotation6 = true;
+
+// // // property[]
+// // console.log(weirdObject.property[]);
+// console.log(weirdObject["property[]"]);
+// var dotNotation7 = false;
+// var bracketNotation7 = true;
+
+// // // 8property
+// // console.log(weirdObject.8property);
+// console.log(weirdObject["8property"]);
+// var dotNotation8 = false;
+// var bracketNotation8 = true;
+
+// function locationizer(work_obj) {
+//     var mylocations = [];
+//     for (var job in work_obj.jobs){
+//         mylocations.push(work_obj.jobs[job].location);
+//     }
+//     return mylocations;
+// };
+
+// function locationizer(work_obj) {
+//     var mylocations = [];
+//     work_obj.jobs.forEach(function(job){
+//         mylocations.push(job.location);
+//     })
+//     return mylocations;
+// };
+
+
+// console.log(locationizer(work));
+
+$("#footerContacts").append(internationalizeButton);
+
+
+function inName(oldName){
+    var newName = oldName;
+    namesArray = newName.trim().split(" ");
+    namesArray[0] = namesArray[0].slice(0,1).toUpperCase() + namesArray[0].slice(1).toLowerCase();
+    namesArray[1] = namesArray[1].toUpperCase();
+    var newName = namesArray.join(" ");
+    return newName;
+};
+
+
+// var name = "AlbERt EINstEiN";
+
+// function nameChanger(oldName) {
+//     var finalName = oldName;
+//     // Your code goes here!
+
+//     names = oldName.split(" ");
+//     names[0] = names[0].slice(0,1).toUpperCase() 
+//              + names[0].slice(1).toLowerCase();
+//     names[1]= names[1].toUpperCase();
+//     finalName = names.join(" ");
+
+//     // Don't delete this line!
+//     return finalName;
+// };
+
+https://console.cloud.google.com/projectselector/home/dashboard
